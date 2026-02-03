@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_night_blue"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Titre -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Créer votre profil"
+            android:textColor="@color/text_white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Nom -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nom complet"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Entrez votre nom complet"
+            android:textColor="@color/text_white"
+            android:textColorHint="@color/text_light_gray"
+            android:backgroundTint="@color/accent_blue" />
+
+        <!-- Prénom -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prénom(s)"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Entrez le(s) prénom(s)"
+            android:textColor="@color/text_white"
+            android:textColorHint="@color/text_light_gray"
+            android:backgroundTint="@color/accent_blue" />
+
+        <!-- Email -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="votre@email.com"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/text_white"
+            android:textColorHint="@color/text_light_gray"
+            android:backgroundTint="@color/accent_blue" />
+
+        <!-- Mot de passe -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mot de passe"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Entrez votre mot de passe"
+            android:inputType="textPassword"
+            android:textColor="@color/text_white"
+            android:textColorHint="@color/text_light_gray"
+            android:backgroundTint="@color/accent_blue" />
+
+        <!-- Téléphone -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Téléphone"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="06 XX  XX  XX  11"
+            android:inputType="phone"
+            android:textColor="@color/text_white"
+            android:textColorHint="@color/text_light_gray"
+            android:backgroundTint="@color/accent_blue" />
+
+        <!-- Université -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Université"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_university"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ESIGELEC, INSA, CESI etc."
+            android:textColor="@color/text_white"
+            android:textColorHint="@color/text_light_gray"
+            android:backgroundTint="@color/accent_blue" />
+
+        <!-- Bouton d'enregistrement -->
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Créer mon profil"
+            android:textColor="@color/text_white"
+            android:backgroundTint="@color/accent_blue"
+            android:layout_marginTop="32dp"
+            android:textSize="16sp"
+            android:padding="16dp" />
+
+        <!-- Message de résultat -->
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/text_light_gray"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_night_blue"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Photo de profil -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_person"
+                    android:background="@drawable/circle_background"
+                    android:padding="20dp"
+                    android:contentDescription="Photo de profil"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageButton
+                    android:id="@+id/btn_change_photo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="Changer la photo"
+                    android:layout_alignBottom="@id/iv_profile"
+                    android:layout_alignEnd="@id/iv_profile"
+                    android:layout_marginEnd="-10dp"
+                    android:layout_marginBottom="-10dp"
+                    android:padding="8dp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Formulaire -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Prénom -->
+                <EditText
+                    android:id="@+id/et_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Prénom *"
+                    android:textColor="@color/text_white"
+                    android:textColorHint="@color/text_light_gray"
+                    android:backgroundTint="@color/accent_blue"
+                    android:inputType="textCapWords" />
+
+                <!-- Nom -->
+                <EditText
+                    android:id="@+id/et_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Nom *"
+                    android:textColor="@color/text_white"
+                    android:textColorHint="@color/text_light_gray"
+                    android:backgroundTint="@color/accent_blue"
+                    android:inputType="textCapWords" />
+
+                <!-- Email -->
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Email *"
+                    android:textColor="@color/text_white"
+                    android:textColorHint="@color/text_light_gray"
+                    android:backgroundTint="@color/accent_blue"
+                    android:inputType="textEmailAddress" />
+
+                <!-- Téléphone -->
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Téléphone (optionnel)"
+                    android:textColor="@color/text_white"
+                    android:textColorHint="@color/text_light_gray"
+                    android:backgroundTint="@color/accent_blue"
+                    android:inputType="phone" />
+
+                <!-- Université -->
+                <EditText
+                    android:id="@+id/et_university"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Université (optionnel)"
+                    android:textColor="@color/text_white"
+                    android:textColorHint="@color/text_light_gray"
+                    android:backgroundTint="@color/accent_blue" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Boutons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Enregistrer"
+                android:textSize="16sp"
+                android:textColor="@color/text_white"
+                android:backgroundTint="@color/accent_green"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Annuler"
+                android:textSize="16sp"
+                android:textColor="@color/text_white"
+                android:backgroundTint="@color/accent_blue" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

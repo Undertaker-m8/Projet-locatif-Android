@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary_night_blue">
+
+    <!-- Toolbar avec titre, icône maison et menu profil -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_night_blue"
+        app:title="Student Housing"
+        app:titleTextColor="@color/text_white"
+        app:navigationIcon="@drawable/ic_home"
+        app:menu="@menu/dashboard_menu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Message de bienvenue -->
+            <TextView
+                android:id="@+id/tv_welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bienvenue !"
+                android:textColor="@color/text_white"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="40dp" />
+
+            <!-- Carte des fonctionnalités -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/card_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Bouton Créer Annonce -->
+                    <Button
+                        android:id="@+id/btn_create_ad"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="📝 Créer une annonce"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_white"
+                        android:backgroundTint="@color/accent_blue"
+                        android:drawablePadding="12dp"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                    <!-- Bouton Carte OSM -->
+                    <Button
+                        android:id="@+id/btn_map"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="🗺️ Carte OSM"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_white"
+                        android:backgroundTint="@color/accent_green"
+                        android:layout_marginTop="12dp"
+                        android:drawablePadding="12dp"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                    <!-- Bouton Voir Annonces -->
+                    <Button
+                        android:id="@+id/btn_view_ads"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="🔍 Voir les annonces"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_white"
+                        android:backgroundTint="@color/accent_purple"
+                        android:layout_marginTop="12dp"
+                        android:drawablePadding="12dp"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                    <!-- Bouton Mes Annonces -->
+                    <Button
+                        android:id="@+id/btn_my_ads"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="📋 Mes annonces"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_white"
+                        android:backgroundTint="@color/accent_orange"
+                        android:layout_marginTop="12dp"
+                        android:drawablePadding="12dp"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                    <!-- Bouton Favoris -->
+                    <Button
+                        android:id="@+id/btn_favorites"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="⭐ Mes favoris"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_white"
+                        android:backgroundTint="@color/accent_yellow"
+                        android:layout_marginTop="12dp"
+                        android:drawablePadding="12dp"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                    <!-- NOUVEAU : Bouton Profil -->
+                    <Button
+                        android:id="@+id/btn_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="👤 Mon profil"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_white"
+                        android:backgroundTint="@color/accent_pink"
+                        android:layout_marginTop="12dp"
+                        android:drawablePadding="12dp"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Bouton Déconnexion -->
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="🚪 Déconnexion"
+                android:textSize="16sp"
+                android:textColor="@color/text_white"
+                android:backgroundTint="@color/error_red"
+                android:layout_marginTop="32dp"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+
+            <!-- Informations app -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Student Housing - Trouvez votre logement étudiant"
+                android:textColor="@color/text_light_gray"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

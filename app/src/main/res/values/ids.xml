@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btn_start" type="id" />
+    <item name="deco_house1" type="id" />
+    <item name="deco_house2" type="id" />
+    <item name="deco_house3" type="id" />
+    <item name="deco_house4" type="id" />
+    <item name="subtitle" type="id" />
+    <item name="logo" type="id" />
+</resources>
