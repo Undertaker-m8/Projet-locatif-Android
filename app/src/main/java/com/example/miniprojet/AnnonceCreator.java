@@ -92,12 +92,12 @@ public class AnnonceCreator {
         db.collection("annonces")
                 .add(annonce)
                 .addOnSuccessListener(documentReference -> {
-                    Toast.makeText(activity, "✅ Annonce créée avec succès!", 
+                    Toast.makeText(activity, " Annonce créée avec succès!", 
                                  Toast.LENGTH_SHORT).show();
                     activity.finish();
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(activity, "❌ Erreur: " + e.getMessage(), 
+                    Toast.makeText(activity, " Erreur: " + e.getMessage(), 
                                  Toast.LENGTH_SHORT).show();
                 });
     }
