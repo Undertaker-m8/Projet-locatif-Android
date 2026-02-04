@@ -159,13 +159,13 @@ public class RouteActivity extends AppCompatActivity {
         instructions.append("Durée estimée: ").append(DistanceCalculator.formatDuration(duration)).append("\n\n");
 
         if (distance < 2) {
-            instructions.append("✅ Vous êtes très près de la destination\n");
+            instructions.append(" Vous êtes très près de la destination\n");
             instructions.append("Marchez environ ").append((int)(distance * 1000)).append(" mètres");
         } else if (distance < 10) {
-            instructions.append("🚗 Prenez votre voiture ou les transports en commun\n");
+            instructions.append(" Prenez votre voiture ou les transports en commun\n");
             instructions.append("Temps estimé: ").append((int)duration).append(" minutes");
         } else {
-            instructions.append("🚗 Long trajet en voiture recommandé\n");
+            instructions.append(" Long trajet en voiture recommandé\n");
             instructions.append("Prévoyez environ ").append((int)duration).append(" minutes de route");
         }
 
