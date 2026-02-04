@@ -118,7 +118,7 @@ public class CreateAnnouncesActivity extends AppCompatActivity {
                         btnCreate.setEnabled(true);
 
                         Toast.makeText(CreateAnnouncesActivity.this,
-                                "✅ Annonce créée avec succès !", Toast.LENGTH_SHORT).show();
+                                " Annonce créée avec succès !", Toast.LENGTH_SHORT).show();
 
                         // Rediriger vers la liste des annonces
                         finish();
@@ -137,7 +137,7 @@ public class CreateAnnouncesActivity extends AppCompatActivity {
                         btnCreate.setEnabled(true);
 
                         Toast.makeText(CreateAnnouncesActivity.this,
-                                "❌ Erreur: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                " Erreur: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
                         // Nettoyer le cache si échec
                         clearCacheAfterFailure();
