@@ -59,8 +59,7 @@ public class Advertisement implements Serializable {
         this.distance = 0.0;
     }
 
-    // =============== MÉTHODES MANQUANTES ===============
-
+    
     // Formate le prix (ex: "750 €")
     public String getFormattedPrice() {
         NumberFormat format = NumberFormat.getNumberInstance(Locale.FRANCE);
@@ -122,7 +121,7 @@ public class Advertisement implements Serializable {
         return address + ", " + city;
     }
 
-    // =============== GETTERS & SETTERS STANDARDS ===============
+    
 
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
