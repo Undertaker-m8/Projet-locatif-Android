@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-// IMPORTANT: Utilisez android.app.Activity
+// IMPORTANT
 import android.app.Activity;
 
 public class HomeActivity extends Activity {
