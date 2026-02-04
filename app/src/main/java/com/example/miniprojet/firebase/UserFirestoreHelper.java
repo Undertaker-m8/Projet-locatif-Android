@@ -86,26 +86,26 @@ public class UserFirestoreHelper {
 
                     if (task.isSuccessful()) {
                         QuerySnapshot querySnapshot = task.getResult();
-                        Log.d(TAG, "📄 Documents trouvés: " + querySnapshot.size());
+                        Log.d(TAG, " Documents trouvés: " + querySnapshot.size());
 
                         if (!querySnapshot.isEmpty()) {
                             DocumentSnapshot document = querySnapshot.getDocuments().get(0);
-                            Log.d(TAG, "🎯 Document ID: " + document.getId());
-                            Log.d(TAG, "📊 Document data: " + document.getData());
+                            Log.d(TAG, " Document ID: " + document.getId());
+                            Log.d(TAG, " Document data: " + document.getData());
 
                             User user = documentToUser(document);
                             callback.onSuccess(user);
                         } else {
-                            Log.w(TAG, "❌ Aucun document trouvé pour email: " + email);
+                            Log.w(TAG, " Aucun document trouvé pour email: " + email);
                             callback.onFailure(new Exception("Aucun compte trouvé avec cet email"));
                         }
                     } else {
-                        Log.e(TAG, "⚠️ Erreur Firestore: ", task.getException());
+                        Log.e(TAG, " Erreur Firestore: ", task.getException());
                         callback.onFailure(task.getException());
                     }
                 })
                 .addOnFailureListener(e -> {
-                    Log.e(TAG, "🚨 Erreur récupération utilisateur: ", e);
+                    Log.e(TAG, " Erreur récupération utilisateur: ", e);
                     callback.onFailure(e);
                 });
     }
