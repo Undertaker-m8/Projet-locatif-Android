@@ -109,12 +109,12 @@ public class AdvertisementFirestoreHelper {
 
                     String source = queryDocumentSnapshots.getMetadata().isFromCache()
                             ? "CACHE" : "SERVEUR";
-                    Log.d(TAG, "📥 " + advertisements.size() + " annonces récupérées depuis " + source);
+                    Log.d(TAG, " " + advertisements.size() + " annonces récupérées depuis " + source);
 
                     callback.onSuccess(advertisements);
                 })
                 .addOnFailureListener(e -> {
-                    Log.e(TAG, "❌ Échec total serveur + cache", e);
+                    Log.e(TAG, " Échec total serveur + cache", e);
                     callback.onFailure(e);
                 });
     }
@@ -151,14 +151,14 @@ public class AdvertisementFirestoreHelper {
         docRef.get(Source.SERVER)
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
-                        Log.d(TAG, "✅ Annonce " + adId + " récupérée depuis SERVEUR");
+                        Log.d(TAG, " Annonce " + adId + " récupérée depuis SERVEUR");
                         callback.onSuccess(documentToAdvertisement(documentSnapshot));
                     } else {
                         // Essai depuis le cache si non trouvé sur serveur
                         docRef.get(Source.CACHE)
                                 .addOnSuccessListener(cacheSnapshot -> {
                                     if (cacheSnapshot.exists()) {
-                                        Log.d(TAG, "✅ Annonce " + adId + " récupérée depuis CACHE");
+                                        Log.d(TAG, " Annonce " + adId + " récupérée depuis CACHE");
                                         callback.onSuccess(documentToAdvertisement(cacheSnapshot));
                                     } else {
                                         callback.onFailure(new Exception("Annonce non trouvée (serveur ni cache)"));
@@ -176,7 +176,7 @@ public class AdvertisementFirestoreHelper {
                     docRef.get(Source.CACHE)
                             .addOnSuccessListener(documentSnapshot -> {
                                 if (documentSnapshot.exists()) {
-                                    Log.d(TAG, "✅ Annonce " + adId + " récupérée depuis CACHE (fallback)");
+                                    Log.d(TAG, " Annonce " + adId + " récupérée depuis CACHE (fallback)");
                                     callback.onSuccess(documentToAdvertisement(documentSnapshot));
                                 } else {
                                     callback.onFailure(new Exception("Annonce non trouvée dans le cache"));
@@ -210,11 +210,11 @@ public class AdvertisementFirestoreHelper {
         adsRef.document(ad.getId())
                 .update(updates)
                 .addOnSuccessListener(aVoid -> {
-                    Log.d(TAG, "✅ Annonce " + ad.getId() + " mise à jour");
+                    Log.d(TAG, " Annonce " + ad.getId() + " mise à jour");
                     callback.onSuccess(ad);
                 })
                 .addOnFailureListener(e -> {
-                    Log.e(TAG, "❌ Erreur mise à jour annonce " + ad.getId(), e);
+                    Log.e(TAG, " Erreur mise à jour annonce " + ad.getId(), e);
                     callback.onFailure(e);
                 });
     }
@@ -224,11 +224,11 @@ public class AdvertisementFirestoreHelper {
         adsRef.document(adId)
                 .delete()
                 .addOnSuccessListener(aVoid -> {
-                    Log.d(TAG, "✅ Annonce " + adId + " supprimée");
+                    Log.d(TAG, " Annonce " + adId + " supprimée");
                     callback.onSuccess(null);
                 })
                 .addOnFailureListener(e -> {
-                    Log.e(TAG, "❌ Erreur suppression annonce " + adId, e);
+                    Log.e(TAG, " Erreur suppression annonce " + adId, e);
                     callback.onFailure(e);
                 });
     }
@@ -247,7 +247,7 @@ public class AdvertisementFirestoreHelper {
 
                     String source = queryDocumentSnapshots.getMetadata().isFromCache()
                             ? "CACHE" : "SERVEUR";
-                    Log.d(TAG, "🏙️ " + ads.size() + " annonces à " + city + " depuis " + source);
+                    Log.d(TAG, " " + ads.size() + " annonces à " + city + " depuis " + source);
 
                     callback.onSuccess(ads);
                 })
@@ -271,7 +271,7 @@ public class AdvertisementFirestoreHelper {
 
                     String source = queryDocumentSnapshots.getMetadata().isFromCache()
                             ? "CACHE" : "SERVEUR";
-                    Log.d(TAG, "💰 " + ads.size() + " annonces < " + maxPrice + " depuis " + source);
+                    Log.d(TAG, " " + ads.size() + " annonces < " + maxPrice + " depuis " + source);
 
                     callback.onSuccess(ads);
                 })
@@ -291,11 +291,11 @@ public class AdvertisementFirestoreHelper {
         favoritesRef.document(userId + "_" + adId)
                 .set(favoriteData)
                 .addOnSuccessListener(aVoid -> {
-                    Log.d(TAG, "⭐ Favori ajouté: " + userId + " -> " + adId);
+                    Log.d(TAG, " Favori ajouté: " + userId + " -> " + adId);
                     callback.onSuccess(null);
                 })
                 .addOnFailureListener(e -> {
-                    Log.e(TAG, "❌ Erreur ajout favori", e);
+                    Log.e(TAG, " Erreur ajout favori", e);
                     callback.onFailure(e);
                 });
     }
@@ -305,11 +305,11 @@ public class AdvertisementFirestoreHelper {
         favoritesRef.document(userId + "_" + adId)
                 .delete()
                 .addOnSuccessListener(aVoid -> {
-                    Log.d(TAG, "🗑️ Favori supprimé: " + userId + " -> " + adId);
+                    Log.d(TAG, " Favori supprimé: " + userId + " -> " + adId);
                     callback.onSuccess(null);
                 })
                 .addOnFailureListener(e -> {
-                    Log.e(TAG, "❌ Erreur suppression favori", e);
+                    Log.e(TAG, " Erreur suppression favori", e);
                     callback.onFailure(e);
                 });
     }
@@ -427,12 +427,12 @@ public class AdvertisementFirestoreHelper {
 
                         // Vérifier si toutes les tâches sont terminées
                         if (ads.size() == adIds.size()) {
-                            Log.d(TAG, "✅ Toutes les annonces favorites récupérées");
+                            Log.d(TAG, " Toutes les annonces favorites récupérées");
                             callback.onSuccess(ads);
                         }
                     })
                     .addOnFailureListener(e -> {
-                        Log.e(TAG, "❌ Erreur récupération annonce " + adId, e);
+                        Log.e(TAG, " Erreur récupération annonce " + adId, e);
 
                         // Continuer même si certaines échouent
                         if (ads.size() == tasks.size()) {
@@ -452,10 +452,10 @@ public class AdvertisementFirestoreHelper {
         db.clearPersistence()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Log.d(TAG, "✅ Cache Firebase nettoyé");
+                        Log.d(TAG,  Cache Firebase nettoyé");
                         callback.onCacheCleared();
                     } else {
-                        Log.e(TAG, "❌ Erreur nettoyage cache", task.getException());
+                        Log.e(TAG, " Erreur nettoyage cache", task.getException());
                         callback.onCacheClearError(task.getException());
                     }
                 });
@@ -466,19 +466,19 @@ public class AdvertisementFirestoreHelper {
         // Tente de récupérer un document factice pour tester la connexion
         adsRef.limit(1).get(Source.SERVER)
                 .addOnSuccessListener(queryDocumentSnapshots -> {
-                    Log.d(TAG, "✅ Connexion Firestore SERVEUR OK");
+                    Log.d(TAG, " Connexion Firestore SERVEUR OK");
                     callback.onConnectionTested(true, "Serveur", null);
                 })
                 .addOnFailureListener(e -> {
-                    Log.w(TAG, "⚠️ Connexion serveur échouée, test cache...", e);
+                    Log.w(TAG, " Connexion serveur échouée, test cache...", e);
 
                     adsRef.limit(1).get(Source.CACHE)
                             .addOnSuccessListener(cacheSnapshots -> {
-                                Log.d(TAG, "✅ Connexion Firestore CACHE OK");
+                                Log.d(TAG, " Connexion Firestore CACHE OK");
                                 callback.onConnectionTested(true, "Cache", null);
                             })
                             .addOnFailureListener(cacheError -> {
-                                Log.e(TAG, "❌ Connexion Firestore totale échouée");
+                                Log.e(TAG, " Connexion Firestore totale échouée");
                                 callback.onConnectionTested(false, "Aucune", cacheError);
                             });
                 });
