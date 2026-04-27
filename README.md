@@ -9,6 +9,7 @@ built with **Java** on **Android Studio**.
 
 - 🎓 Student registration and profile management
 - 🏘️ House listing and availability tracking
+- 🏘️ Rating and Data Storage
 - 📅 Booking and rent management
 - 🗺️ Interactive map visualization via **OpenStreetMap (OSM) API**
 - ☁️ Real-time data storage with **Firebase**
